@@ -4,7 +4,6 @@ use ieee.std_logic_1164.all;
 entity TB_PC is
 end TB_PC;
 
-
 architecture HEHE of TB_PC is
 
 	component pc

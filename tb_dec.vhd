@@ -4,15 +4,13 @@ use ieee.std_logic_1164.all;
 entity TB_DEC is
 end TB_DEC;
 
-
 architecture HEHE of TB_DEC is
 
 	component dec
 		PORT(
-			CLK  : in STD_LOGIC;
 			OP   : in STD_LOGIC_VECTOR(7 downto 0);
 			OADD : out STD_LOGIC;
-		    OAND : out STD_LOGIC;
+		   OAND : out STD_LOGIC;
 			OOR  : out STD_LOGIC;
 			ONOT : out STD_LOGIC;
 			OY   : out STD_LOGIC;
@@ -25,9 +23,7 @@ architecture HEHE of TB_DEC is
 
 begin
 
-	uut: dec PORT MAP (CLK => CLK, OP => OP, OADD => OADD, OAND => OAND, OOR=> OOR, ONOT => ONOT, OY => OY, OHLT => OHLT, ONOP => ONOP);
-	
-	CLK <= not CLK after 5 ns;
+	uut: dec PORT MAP (OP => OP, OADD => OADD, OAND => OAND, OOR=> OOR, ONOT => ONOT, OY => OY, OHLT => OHLT, ONOP => ONOP);
 
 	stim_proc: process
 	begin

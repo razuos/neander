@@ -11,16 +11,16 @@ entity PC is
 end PC;
 
 
-architecture HEHE of PC IS
+architecture HEHE of PC is
 
-signal TMP: STD_LOGIC_VECTOR(3 downto 0) := "0000";
+	signal TMP: STD_LOGIC_VECTOR(3 downto 0) := "0000";
 
 begin
 
-	process(CLK, RST) begin
+	process(CLK, RST, INC) begin
 		if(RST = '1') then
 			tmp <= "0000";
-		elsif(rising_edge(CLK) and INC = '1') then
+		ELSIF (INC = '1' AND rising_edge(CLK)) THEN
 			if (tmp = "1111") then
 				tmp <= "0000";
 			else
